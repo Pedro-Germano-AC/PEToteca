@@ -1,2 +1,2 @@
-# PEToteca
-Desenvolvimento de um Software para a atividade PEToteca. 
+# PEToteca 
+Desenvolvimento de um software para a atividade PEToteca. 
