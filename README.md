@@ -4,7 +4,7 @@
   </font>
 </h1>
 
-O projeto intitulado PEToteca permite aos alunos da Universidade Federal da Paraíba (UFPB) a utilização gratuita de vários livros que eles utilizarão durante a graduação, por meio de um sistema de empréstimo. Os livros que constituem o acervo da PEToteca foram recebidos por meio de doações, sendo elas dos discentes e dos docentes da universidade. O projeto tem tido grande êxito, o que pode ser constatado através do antigo sistema de controle de empréstimos, percebendo-se que a grande maioria dos livros acadêmicos teve uma grande circulação durante o período letivo. Ademais, este projeto contribui para minimizar custos com cópias ou compras de livros por parte dos alunos, que muitas vezes não possuem os recursos necessários para os mesmos. 
+O projeto intitulado PEToteca busca permitir aos alunos da Universidade Federal da Paraíba (UFPB) a utilização gratuita de vários livros que eles utilizarão durante a graduação, por meio de um sistema de empréstimo. Os livros que constituem o acervo da PEToteca foram recebidos por meio de doações, sendo elas dos discentes e dos docentes da universidade. O projeto tem tido grande êxito, o que pode ser constatado através do antigo sistema de controle de empréstimos, percebendo-se que a grande maioria dos livros acadêmicos teve uma grande circulação durante o período letivo. Ademais, este projeto contribui para minimizar custos com cópias ou compras de livros por parte dos alunos, que muitas vezes não possuem os recursos necessários para os mesmos. 
 
 ## Objetivos
 1. Possibilitar que mais estudantes tenham acesso aos materiais utilizados nas disciplinas curriculares. 
