@@ -44,5 +44,4 @@ def upload_file(file_directory, file_id):
     file = service.files().update(fileId=file_id,
                                  media_body=media).execute()
 
-upload_file("acervo.xlsx", "1UQknum6g8-iGNoMlu_3pvXTqcBj-2sqG")
 
