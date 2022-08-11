@@ -63,7 +63,3 @@ def upload_file(file_directory, file_id):
     media = MediaFileUpload(file_directory, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     file = service.files().update(fileId=file_id,
                                  media_body=media).execute()
-
-
-get_file('Pedro2.xlsx', export_xlsx('1Ri3NNi1rardj0M_0ERqZnx83B3EAIlLFpdWvu8yV_-k'))   
-
