@@ -17,5 +17,7 @@ ___
 ## Resultados Esperados
 1. Favorecer o caráter solidário entre os integrantes do curso de Engenharia Elétrica da UFPB, a partir do incentivo a doações de materiais que não sejam mais utilizados por seus donos.
 2. Permitir que mais estudantes tenham acesso aos materiais utilizados pelos professores. 
-
-![petoteca (3)](https://user-images.githubusercontent.com/77749126/190187387-cfc7897a-f885-4b33-a1be-c3aedbb52345.gif)
+___
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/77749126/190187387-cfc7897a-f885-4b33-a1be-c3aedbb52345.gif" />
+</p>
