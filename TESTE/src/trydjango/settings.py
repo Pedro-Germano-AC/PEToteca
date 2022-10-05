@@ -58,7 +58,7 @@ ROOT_URLCONF = 'trydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/DELL/Documents/dev/TESTE/src/templates/'],
+        'DIRS': ['C:/Users/DELL/Documents/Cadastro dos Livros/TESTE/src/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
