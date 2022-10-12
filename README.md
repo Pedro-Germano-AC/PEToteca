@@ -8,7 +8,11 @@ O projeto, intitulado PEToteca, tem como objetivo permitir, aos alunos de gradua
 
 ## Objetivos
 1. Possibilitar que mais estudantes tenham acesso aos materiais utilizados nas disciplinas curriculares, tornando o ambiente acadêmico mais igualitário. 
-2. Permitir a troca de conhecimento entre os estudantes de diferentes períodos letivos, a partir do repasse de anotações, avaliações e demais materiais utilizados nas disciplinas.
+<<<<<<< HEAD
+2. Permitir a troca de conhecimento entre os estudantes de diferentes períodos letivos, a partir do empréstimo de livros e materiais de extrema importância na graduação.
+=======
+2. Permitir a troca de conhecimento entre os discentes e docerntes, a partir do repasse de livros e materiais, utilizados nas disciplinas.
+>>>>>>> 438597df6270365b797c960447ffb308a837a905
 3. Favorecer doações de materiais que não serão mais utilizados.
 ___
 ## Metodologia
@@ -16,7 +20,11 @@ Os livros, recebidos por meio de doações, serão cadastrados em uma base de da
 
 ## Resultados Esperados
 1. Favorecer o caráter solidário entre os integrantes do curso de Engenharia Elétrica da UFPB, a partir do incentivo a doações de materiais que não sejam mais utilizados por seus donos.
-2. Permitir que mais estudantes tenham acesso aos materiais utilizados pelos professores. 
+<<<<<<< HEAD
+2. Permitir que mais estudantes tenham acesso a livros e materiais, na tentativa de edificar um ambiente mais igualitário. 
+=======
+2. Permitir que mais estudantes tenham acesso a livros necessários durante a graduação, tornando o ambiente acadêmico mais igualitário. 
+>>>>>>> 438597df6270365b797c960447ffb308a837a905
 ___
 <p align="center">
   <img src="https://user-images.githubusercontent.com/77749126/190187387-cfc7897a-f885-4b33-a1be-c3aedbb52345.gif" />
