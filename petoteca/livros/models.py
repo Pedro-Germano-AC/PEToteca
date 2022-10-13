@@ -3,6 +3,13 @@ from django.db import models
 # Create your models here.
 from django.forms import ChoiceField
 
+class Categoria(models.Model):
+    nome = models.CharField(max_length=30)
+    descricao = models.TextField()
+
+    def __str__(self) -> str:
+        return self.nome
+
 class Livro(models.Model):
     #Nome = models.CharField(max_length = 100)
     #Email = models.EmailField(null = True)
@@ -24,3 +31,7 @@ class Livro(models.Model):
     )
     Tipo = models.CharField(max_length = 30, null = True, choices = type_choices)
     Data = models.DateField(null = True)
+    Categoria = models.ForeignKey(Categoria, on_delete = models.DO_NOTHING)
+
+    def __str__(self) -> str:
+        return self.Titulo
