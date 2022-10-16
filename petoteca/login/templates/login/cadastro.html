@@ -14,7 +14,16 @@
       {{form.username}}
       {{form.email}}
       {{form.password1}}
-      {{form.password2}}
+      {{form.password2}}	
+			
+			{% if form.errors %}
+				{% for field in form %}
+					{% for error in field.errors %}
+								<span align = "justify"> {{field.label}}: {{ error|escape }} </span> 
+					{% endfor %}
+				{% endfor %}
+			{% endif %}
+			<br>
 			<button name="realSignUp" value="1">Cadastrar-se</button>
 		</form>
 		
@@ -47,11 +56,6 @@
 	</div>
 </div>
 
-{% for message in messages %}
-<p> {{message}} </p>
-{% endfor %}
-
-<p> {{form.errors}} </p>
 
 
 <script src="{% static 'login/script.js' %}"></script>
