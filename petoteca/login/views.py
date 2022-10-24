@@ -29,9 +29,9 @@ def cadastroPage(request):
                 #form.clean_email()
                 if form.is_valid(): 
                     form.save()
-                    messages.success(request, 'Clique no link enviado ao email cadastrado e verifique-o.')
-                else: 
-                    messages.error(request, 'Erro na validação dos seus dados pessoais')
+                    messages.success(request, 'Clique no link enviado ao email cadastrado e verifique-o.', extra_tags='sucesso')
+                # else: 
+                #     messages.error(request, 'Erro na validação dos seus dados pessoais', extra_tags='errozin')
             elif request.POST.get('realSignIn'):
                 username = request.POST.get('username')      
                 password = request.POST.get('password')      
@@ -41,7 +41,7 @@ def cadastroPage(request):
                     login(request, user)
                     return redirect('login:login_home')
                 else:
-                    messages.info(request, 'Senha ou usuário incorretos')
+                    messages.info(request, 'Senha ou usuário incorretos', extra_tags='inform')
     else: return redirect('login:login_home')
 
     context = {'form': form}
