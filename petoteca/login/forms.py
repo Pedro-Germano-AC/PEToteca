@@ -7,7 +7,7 @@ class CreateUserForm(UserCreationForm):
     def clean_email(self):
         data = self.cleaned_data['email']
         if data.split('@')[1] != "cear.ufpb.br":   
-            raise forms.ValidationError("Necessário que o email seja do domínio @cear")
+            raise forms.ValidationError("Necessário que o email seja do domínio @cear.")
         return data
     class Meta: 
         model = User
