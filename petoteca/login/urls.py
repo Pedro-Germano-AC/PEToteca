@@ -7,4 +7,5 @@ urlpatterns = [
     path('logged/', views.loggedPage, name='login_home'),
     path('logout/', views.logoutUser, name='logout'),
     path('cadastro/', views.cadastroPage, name='cadastro'),
+    path('ativar/<uidb64>/<token>', views.ativar, name='ativar'),
 ]

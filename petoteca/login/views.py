@@ -1,11 +1,17 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect 
-from django.contrib.auth import authenticate, login, logout 
+from django.contrib.auth import authenticate, login, logout, get_user_model 
 from django.contrib.auth.decorators import login_required 
 from django.contrib import messages
+from django.template.loader import render_to_string
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
+from django.core.mail import EmailMessage
 
 
 from .forms import CreateUserForm 
+from .tokens import account_activation_token
 
 @login_required(login_url='login:cadastro')
 def loggedPage(request): 
@@ -17,8 +23,6 @@ def logoutUser(request):
     return redirect('login:cadastro')
 
 def cadastroPage(request): 
-    #TODO 
-    # Criar sequência de mensagens apontando erros durante o login
     if not request.user.is_authenticated: 
         form = CreateUserForm();  
 
@@ -26,12 +30,11 @@ def cadastroPage(request):
 
             if request.POST.get('realSignUp'): 
                 form = CreateUserForm(request.POST)
-                #form.clean_email()
                 if form.is_valid(): 
-                    form.save()
-                    messages.success(request, 'Clique no link enviado ao email cadastrado e verifique-o.', extra_tags='sucesso')
-                # else: 
-                #     messages.error(request, 'Erro na validação dos seus dados pessoais', extra_tags='errozin')
+                    user = form.save(commit=False)
+                    user.is_active = False 
+                    user.save() 
+                    activateEmail(request, user, form.cleaned_data.get('email'))
             elif request.POST.get('realSignIn'):
                 username = request.POST.get('username')      
                 password = request.POST.get('password')      
@@ -41,8 +44,41 @@ def cadastroPage(request):
                     login(request, user)
                     return redirect('login:login_home')
                 else:
-                    messages.info(request, 'Senha ou usuário incorretos', extra_tags='inform')
+                    messages.info(request, 'Senha ou usuário incorretos')
     else: return redirect('login:login_home')
 
     context = {'form': form}
     return render(request, 'login\cadastro.html', context)
+
+def ativar(request, uidb64, token):
+    User = get_user_model()
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except:
+        user = None
+
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+
+        messages.success(request, f"Muito obrigado por confirmar seu email, {user.username}. Agora você pode acessar nosso acervo.")
+    else:
+        messages.error(request, "Link de ativação inválido!")
+
+    return redirect('login:cadastro')
+
+def activateEmail(request, user, to_email):
+    mail_subject = "Ative sua conta"
+    message = render_to_string("login/ativarconta.html", {
+        'user': user.username,
+        'domain': get_current_site(request).domain,
+        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+        'token': account_activation_token.make_token(user),
+        "protocol": 'https' if request.is_secure() else 'http'
+    })
+    email = EmailMessage(mail_subject, message, to=[to_email])
+    if email.send():
+        messages.success(request, f'Clique no email enviado para {to_email} e verifique sua conta.\nCaso não encontre, verifique a caixa de spam ou tente novamente.')
+    else:
+        messages.error(request, f'Problema ao enviar o email de verificação para {to_email}, veja se está digitado corretamente.')
