@@ -136,7 +136,8 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
 }
 
-#Email 
+#Email
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_FROM = 'petotecaoficial@gmail.com'
